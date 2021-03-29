@@ -207,43 +207,41 @@ namespace Optima::Control {
 
 #pragma region UTILITY
         template <typename Q>
-        constexpr inline auto quantityType = std::string_view("scalar");
+        constexpr inline auto quantityType = "scalar";
         template <>
-        constexpr inline auto quantityType<SI::Time> = std::string_view("time");
+        constexpr inline auto quantityType<SI::Time> = "time";
         template <>
-        constexpr inline auto quantityType<SI::Length> = std::string_view("length");
+        constexpr inline auto quantityType<SI::Length> = "length";
         template <>
-        constexpr inline auto quantityType<SI::Mass> = std::string_view("mass");
+        constexpr inline auto quantityType<SI::Mass> = "mass";
         template <>
-        constexpr inline auto quantityType<SI::Current> = std::string_view("current");
+        constexpr inline auto quantityType<SI::Current> = "current";
         template <>
-        constexpr inline auto quantityType<SI::ThermoTemperature> =
-            std::string_view("thermodynamic_temperature");
+        constexpr inline auto quantityType<SI::ThermoTemperature> = "thermodynamic_temperature";
         template <>
-        constexpr inline auto quantityType<SI::SubstanceAmount> =
-            std::string_view("amount_of_substance");
+        constexpr inline auto quantityType<SI::SubstanceAmount> = "amount_of_substance";
         template <>
-        constexpr inline auto quantityType<SI::LuminousIntensity> = std::string_view("luminance");
+        constexpr inline auto quantityType<SI::LuminousIntensity> = "luminance";
         template <>
-        constexpr inline auto quantityType<SI::Velocity> = std::string_view("velocity");
+        constexpr inline auto quantityType<SI::Velocity> = "velocity";
         template <>
-        constexpr inline auto quantityType<SI::Acceleration> = std::string_view("acceleration");
+        constexpr inline auto quantityType<SI::Acceleration> = "acceleration";
         template <>
-        constexpr inline auto quantityType<SI::Force> = std::string_view("force");
+        constexpr inline auto quantityType<SI::Force> = "force";
         template <>
-        constexpr inline auto quantityType<SI::Power> = std::string_view("power");
+        constexpr inline auto quantityType<SI::Power> = "power";
         template <>
-        constexpr inline auto quantityType<SI::Voltage> = std::string_view("voltage");
+        constexpr inline auto quantityType<SI::Voltage> = "voltage";
         template <>
-        constexpr inline auto quantityType<SI::Resistance> = std::string_view("resistance");
+        constexpr inline auto quantityType<SI::Resistance> = "resistance";
         template <>
-        constexpr inline auto quantityType<SI::Area> = std::string_view("area");
+        constexpr inline auto quantityType<SI::Area> = "area";
         template <>
-        constexpr inline auto quantityType<SI::Volume> = std::string_view("volume");
+        constexpr inline auto quantityType<SI::Volume> = "volume";
 
         template <typename Q>
         constexpr auto getQuantityType() noexcept {
-            return quantityType<Q>;
+            return std::string_view(quantityType<Q>);
         }
 #pragma endregion
 
